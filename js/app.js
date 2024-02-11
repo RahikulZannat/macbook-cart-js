@@ -27,6 +27,7 @@ function extraMemoryPrice(memory){
 
 //storage price
 let storageAddedOnce = false;
+
 function extraStoragePrice(storage){
     const extraStorage = document.getElementById('storage-price');
     const addExtraStorage = parseInt(extraStorage.innerText);
@@ -34,31 +35,25 @@ function extraStoragePrice(storage){
      const totalPrice = document.getElementById('total-price');
      const newTotalPrice = parseInt(totalPrice.innerText);
 
-     if (storage && (storageAddedOnce || storage === "storage-3")) { 
-        extraStorage.innerText = addExtraStorage + 100; 
-        totalPrice.innerText = newTotalPrice + 100; 
-        storageAddedOnce = true;
-    } 
-     
-     else if(storage && !storageAddedOnce){
-         extraStorage.innerText = addExtraStorage + 60;
-         totalPrice.innerText = newTotalPrice + 60;
-         storageAddedOnce = true;
-     }
-
-    
-     else if(!storage  && storageAddedOnce) {
-        extraStorage.innerText = addExtraStorage - 60;
-        totalPrice.innerText = newTotalPrice - 60;
-        storageAddedOnce = false;
-        
-     }
-     //total summary
-     const otherTotalPriceElement = document.getElementById('other-total-price');
-    if (otherTotalPriceElement) {
-        totalPrice.innerText;
-        otherTotalPriceElement.innerText = totalPrice.innerText;
+     if (storage === "storage-1") {
+        extraStorage.innerText = "0"; // Set storage price to 0
+        totalPrice.innerText = newTotalPrice - addExtraStorage;
+        storageAddedOnce = false; // Reset storageAddedOnce flag
+    } else if (storage === "storage-2") {
+        extraStorage.innerText = "60"; // Display 60 in storage-price
+        totalPrice.innerText = newTotalPrice + 60;
+    } else if (storage === "storage-3") {
+        extraStorage.innerText = "100"; // Display 100 in storage-price
+        totalPrice.innerText = newTotalPrice - 60 + 100; // Remove previous value (60) and add 100
     }
+
+          //total summary
+          const otherTotalPriceElement = document.getElementById('other-total-price');
+          if (otherTotalPriceElement) {
+              totalPrice.innerText;
+              otherTotalPriceElement.innerText = totalPrice.innerText;
+          }
+
      
 }
 
@@ -72,10 +67,10 @@ document.getElementById('memory-2').addEventListener('click',function(){
 
 //storage
 document.getElementById('storage-1').addEventListener('click',function(){
-    extraStoragePrice(false);
+    extraStoragePrice("storage-1");
 })
 document.getElementById('storage-2').addEventListener('click',function(){
-    extraStoragePrice(true);
+    extraStoragePrice("storage-2");
 })
 document.getElementById('storage-3').addEventListener('click',function(){
     extraStoragePrice("storage-3");
