@@ -29,9 +29,9 @@
 
             <div class="storage mt-6">
                 <h1 class="text-3xl font-medium">Storage</h1>
-                <button class="mt-2 border-slate-500 font-normal border-solid border-2 text-base py-2 px-5 bg-white text-black font-semibold rounded hover:bg-black-700 focus:outline-none focus:ring focus:violet-400">256gb SSD storage</button>
-                <button class="mt-2 border-slate-500 font-normal border-solid border-2 text-base py-2 px-5 bg-white text-black font-semibold rounded hover:bg-black-700 focus:outline-none focus:ring focus:violet-400"> 512GB SSD storage</button>
-                <button class="mt-2 border-slate-500 font-normal border-solid border-2 text-base py-2 px-5 bg-white text-black font-semibold rounded hover:bg-black-700 focus:outline-none focus:ring focus:violet-400"> 1TB SSD storage</button>
+                <button id="storage-1" class="mt-2 border-slate-500 font-normal border-solid border-2 text-base py-2 px-5 bg-white text-black font-semibold rounded hover:bg-black-700 focus:outline-none focus:ring focus:violet-400">256gb SSD storage</button>
+                <button id="storage-2" class="mt-2 border-slate-500 font-normal border-solid border-2 text-base py-2 px-5 bg-white text-black font-semibold rounded hover:bg-black-700 focus:outline-none focus:ring focus:violet-400"> 512GB SSD storage</button>
+                <button id="storage-3" class="mt-2 border-slate-500 font-normal border-solid border-2 text-base py-2 px-5 bg-white text-black font-semibold rounded hover:bg-black-700 focus:outline-none focus:ring focus:violet-400"> 1TB SSD storage</button>
             </div>
 
             <div class="delivery-option mt-6">
@@ -67,7 +67,7 @@
                     <h1>Extra Storage Cost</h1>
                 </div>
                 <div class="text-xl font-bold">
-                    <h1>$0</h1>
+                    <h1>$ <span id="storage-price">0</span></h1>
                 </div>
                 
             </div>
@@ -102,7 +102,7 @@
     </main>
     <footer class="mt-2 mb-8 grid justify-items-stretch">
         <hr class="h-px my-4 bg-gray-300 border-0 dark:bg-gray-700 w-11/12 justify-self-center">
-        <h1 class="text-5xl font-semibold text-center">Total: <span>$1299</span></h1>
+        <h1 class="text-5xl font-semibold text-center">Total: $ <span id="other-total-price">1299</span></h1>
 
     </footer>
 
